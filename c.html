@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C Language</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<button class="toggle" onclick="toggleDark()"><i class="fas fa-moon"></i></button>
+
+<header>C Language</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="c.html">C Language</a>
+    <a href="python.html">Python</a>
+    <a href="html.html">HTML</a>
+</nav>
+
+<div class="editor-container">
+<h2>Introduction</h2>
+<p>C is a powerful system-level language, commonly used for operating systems, embedded systems, and performance-critical applications.</p>
+
+<h2>Important Syntax</h2>
+
+<h3>Hello World</h3>
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello World");
+    return 0;
+}
+</pre>
+
+<h3>Variables</h3>
+<pre>
+int a = 10;
+float b = 5.5;
+char c = 'A';
+</pre>
+
+<h3>Loop Example</h3>
+<pre>
+for(int i = 0; i &lt; 5; i++) {
+    printf("%d\n", i);
+}
+</pre>
+
+<h2>Try it Yourself (HTML/JS simulation)</h2>
+<textarea id="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h3&gt;C Syntax Example&lt;/h3&gt;
+&lt;p&gt;Cannot execute C directly in browser.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+<br>
+<button class="btn" onclick="runCode()">▶ Run Code</button>
+<iframe id="output"></iframe>
+</div>
+
+<footer>© 2026 MayankCodes09</footer>
+
+<script>
+function toggleDark(){ document.body.classList.toggle("dark"); }
+
+function runCode() {
+    let code = document.getElementById("code").value;
+    let output = document.getElementById("output").contentWindow.document;
+    output.open();
+    output.write(code);
+    output.close();
+}
+</script>
+
+</body>
+</html>

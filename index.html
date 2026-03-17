@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Programming</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<button class="toggle" onclick="toggleDark()"><i class="fas fa-moon"></i></button>
+
+<header><i class="fas fa-code"></i> Learn Programming</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="c.html">C Language</a>
+    <a href="python.html">Python</a>
+    <a href="html.html">HTML</a>
+</nav>
+
+<div class="container">
+    <a href="c.html" class="card">
+        <i class="fas fa-c"></i>
+        <h3>C Language</h3>
+        <p>System-level programming basics</p>
+    </a>
+    <a href="python.html" class="card">
+        <i class="fab fa-python"></i>
+        <h3>Python</h3>
+        <p>Easy and powerful programming</p>
+    </a>
+    <a href="html.html" class="card">
+        <i class="fab fa-html5"></i>
+        <h3>HTML</h3>
+        <p>Build modern web pages</p>
+    </a>
+</div>
+
+<footer>© 2026 MayankCodes09</footer>
+
+<script>
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

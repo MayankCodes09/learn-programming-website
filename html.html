@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<button class="toggle" onclick="toggleDark()"><i class="fas fa-moon"></i></button>
+
+<header>HTML</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="c.html">C Language</a>
+    <a href="python.html">Python</a>
+    <a href="html.html">HTML</a>
+</nav>
+
+<div class="editor-container">
+<h2>Introduction</h2>
+<p>HTML is the standard markup language for creating web pages. It structures content using tags like headings, paragraphs, links, and images.</p>
+
+<h2>Important Syntax</h2>
+
+<h3>Basic Structure</h3>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3>Links</h3>
+<pre>
+&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;
+</pre>
+
+<h3>Images</h3>
+<pre>
+&lt;img src="image.jpg" alt="Image"&gt;
+</pre>
+
+<h2>Try it Yourself</h2>
+<textarea id="code">
+<h1 style="color:#1e90ff;">Hello World</h1>
+<p>Edit this and click Run!</p>
+</textarea>
+<br>
+<button class="btn" onclick="runCode()">▶ Run Code</button>
+<iframe id="output"></iframe>
+</div>
+
+<footer>© 2026 MayankCodes09</footer>
+
+<script>
+function toggleDark(){ document.body.classList.toggle("dark"); }
+
+function runCode() {
+    let code = document.getElementById("code").value;
+    let output = document.getElementById("output").contentWindow.document;
+    output.open();
+    output.write(code);
+    output.close();
+}
+</script>
+
+</body>
+</html>

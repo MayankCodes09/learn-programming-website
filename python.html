@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<button class="toggle" onclick="toggleDark()"><i class="fas fa-moon"></i></button>
+
+<header>Python</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="c.html">C Language</a>
+    <a href="python.html">Python</a>
+    <a href="html.html">HTML</a>
+</nav>
+
+<div class="editor-container">
+<h2>Introduction</h2>
+<p>Python is a high-level programming language known for simplicity and readability. Used in AI, data science, and web development.</p>
+
+<h2>Important Syntax</h2>
+<h3>Hello World</h3>
+<pre>print("Hello World")</pre>
+
+<h3>Variables</h3>
+<pre>x = 10
+name = "Mayank"</pre>
+
+<h3>Loop Example</h3>
+<pre>for i in range(5):
+    print(i)</pre>
+
+<h2>Try it Yourself</h2>
+<textarea id="code">
+print("Hello from MayankCodes09")
+for i in range(3):
+    print(i)
+</textarea>
+<br>
+<button class="btn" onclick="runCodePython()">▶ Run Code</button>
+<iframe id="output"></iframe>
+</div>
+
+<footer>© 2026 MayankCodes09</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/skulpt/skulpt/dist/skulpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/skulpt/skulpt/dist/skulpt-stdlib.js"></script>
+<script>
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+// Run Python code in browser using Skulpt
+function runCodePython(){
+    const code = document.getElementById("code").value;
+    const output = document.getElementById("output");
+    function outf(text){ output.contentWindow.document.body.innerHTML += text + "<br>"; }
+    output.contentWindow.document.open();
+    output.contentWindow.document.write("<body></body>");
+    output.contentWindow.document.close();
+    Sk.configure({output:outf});
+    (Sk.TurtleGraphics || (Sk.TurtleGraphics={})).target = 'output';
+    Sk.misceval.asyncToPromise(()=>Sk.importMainWithBody("<stdin>", false, code));
+}
+</script>
+
+</body>
+</html>
